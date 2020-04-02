@@ -20,3 +20,14 @@
 .InputElement:focus {
     background-color: #ccc;
 }
+
+.invalid {
+    border: 1px solid red;
+    background-color: salmon;
+}
+
+.ValidationError {
+    color: red;
+    margin: 5px 0;
+    text-align: left;
+}
