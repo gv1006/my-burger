@@ -1,0 +1,11 @@
+.Order {
+    border: 1px dotted black;
+    box-shadow: 0 2px 3px  gray;
+    width: 60%;
+    margin-left: 250px;
+
+}
+
+p {
+    text-align: center;
+}

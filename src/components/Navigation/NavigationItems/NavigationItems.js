@@ -5,8 +5,8 @@ import './NavigationItems.css';
 const navigationItems = (props) => {
     return(
         <ul className='NavigationItems'>
-           <NavigationItem link="/" active>Burger</ NavigationItem>
-           <NavigationItem link="/checkout">Checkout</ NavigationItem>
+           <NavigationItem link="/" exact>Burger</ NavigationItem>
+           <NavigationItem link="/orders">Orders</ NavigationItem>
         </ul>
     );
 };
