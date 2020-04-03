@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Button from '../../../components/UI/Button/Button';
 import './ContactData.css';
 import axios from '../../../axios-orders';
@@ -112,8 +114,8 @@ class ContactData extends Component {
             customerDetails[key] = data.value;
         }
         const order = {
-            ingredients: this.props.ingredients,
-            totalPrice: this.props.totalPrice,
+            ingredients: this.props.ings,
+            totalPrice: this.props.price,
             customerDetails: customerDetails
         };
         axios.post('/orders.json', order)
@@ -182,4 +184,9 @@ class ContactData extends Component {
     }
 }
 
-export default withRouter(ContactData);
+const mapStateToProps = (state) => ({
+    ings: state.ingredients,
+    price: state.totalPrice
+})
+
+export default connect(mapStateToProps)(withRouter(ContactData));
