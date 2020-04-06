@@ -3,7 +3,10 @@
     box-shadow: 0 2px 3px  gray;
     width: 60%;
     margin-left: 250px;
-
+    margin: 45px;
+    height: 130px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 p {
