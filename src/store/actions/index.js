@@ -9,3 +9,10 @@ export {
     purchaseBurgerInit,
     fetchOrder
 } from './order';
+
+export {
+    auth,
+    authLogout,
+    setAuthRedirectPath,
+    checkAuthToken
+} from './auth';

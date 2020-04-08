@@ -4,6 +4,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import './Toolbar.css'
 
 const toolbar = (props) => {
+    console.log(props);
     return (
         <header className='Toolbar'>
             <div onClick={props.menuClicked}>MENU</div>
@@ -11,7 +12,7 @@ const toolbar = (props) => {
                 <Logo />
             </div>
             <div className="DesktopOnly">
-            <NavigationItems />
+            <NavigationItems isAuthenticated={props.isAuth}/>
             </div>
         </header>
     );

@@ -9,7 +9,10 @@ import * as actionCreators from '../../../store/actions/index';
 class Orders extends Component {
     
     componentDidMount() {
-        this.props.startFetchOrders();
+        console.log(this.props);
+        console.log('toekn', this.props.token);
+        console.log('userId', this.props.userId);
+        this.props.startFetchOrders(this.props.token, this.props.userId);
     }
     render() {
         let orders = this.props.orders.map(order => <Order 
@@ -28,16 +31,18 @@ class Orders extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state.order);
+    console.log(state);
     return {
         orders: state.order.orders,
-        loading: state.order.loading
+        loading: state.order.loading,
+        token: state.auth.idToken,
+        userId: state.auth.userId
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        startFetchOrders: () => dispatch(actionCreators.fetchOrder())
+        startFetchOrders: (token, userId) => dispatch(actionCreators.fetchOrder(token, userId))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(withErrorHandler(Orders, axios));
